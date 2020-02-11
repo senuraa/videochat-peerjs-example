@@ -12,8 +12,8 @@ var os     = require('os');
 var ifaces = os.networkInterfaces();
 
 // Public Self-Signed Certificates for HTTPS connection
-var privateKey  = fs.readFileSync('./../certificates/key.pem', 'utf8');
-var certificate = fs.readFileSync('./../certificates/cert.pem', 'utf8');
+var privateKey  = fs.readFileSync('/etc/letsencrypt/live/peer.senuraa.com/privkey.pem', 'utf8');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/peer.senuraa.com/fullchain.pem', 'utf8');
 
 var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
