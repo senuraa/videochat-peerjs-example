@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var call = peer.call(peer_id, window.localStream);
 
         call.on('stream', function (stream) {
-            window.peer_stream = stream;
+            window.peer_stream = URL.createObjectURL(stream);
 
             onReceiveStream(stream, 'peer-camera');
         });
